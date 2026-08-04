@@ -152,7 +152,6 @@
       width: 90%;
       margin: 0 auto;
       border-radius: 12px;
-      background: url("banner.png") center/cover no-repeat;
       min-height: 100vh;
       display: flex;
       justify-content: center;
@@ -160,21 +159,49 @@
       text-align: center;
       padding: 70px 20px 20px;
       position: relative;
+      overflow: hidden;
+    }
+
+    .banner-bg {
+      position: absolute;
+      inset: 0;
+      background: url("banner.png") center/cover no-repeat;
+      animation: kenburns 20s ease-in-out infinite alternate;
+      z-index: 0;
+    }
+
+    @keyframes kenburns {
+      from { transform: scale(1); }
+      to { transform: scale(1.08); }
     }
 
     .banner::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0.15) 45%, rgba(0,0,0,0.35));
+      background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.2) 45%, rgba(0,0,0,0.4));
       border-radius: 12px;
+      z-index: 1;
     }
 
     .banner-content {
       padding: 40px;
       border-radius: 10px;
       position: relative;
-      z-index: 1;
+      z-index: 2;
+    }
+
+    .banner-overline {
+      display: inline-block;
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #00ffb3;
+      border: 1px solid rgba(0, 255, 179, 0.5);
+      padding: 6px 16px;
+      border-radius: 30px;
+      margin-bottom: 20px;
+      background: rgba(0, 255, 179, 0.05);
     }
 
     .banner h1 {
@@ -187,6 +214,22 @@
       font-size: clamp(16px, 3vw, 20px);
       margin-bottom: 30px;
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      color: #00ffb3;
+      animation: bounce 2s infinite;
+      opacity: 0.85;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(10px); }
     }
 
     .btn {
@@ -657,6 +700,16 @@
         bottom: 18px;
         right: 18px;
       }
+
+      .banner .btn {
+        font-size: 0.95rem;
+        padding: 12px 20px;
+        white-space: nowrap;
+      }
+
+      .scroll-indicator {
+        bottom: 20px;
+      }
     }
   </style>
 </head>
@@ -682,10 +735,15 @@
 
   <!-- BANNER -->
   <section id="banner" class="banner">
+    <div class="banner-bg"></div>
     <div class="banner-content">
+      <span class="banner-overline">Personal Trainer · Brasília/DF</span>
       <h1>Daniel Montandon</h1>
       <p>Transformação Física com Método, Estratégia e Acompanhamento Profissional</p>
       <a href="#contato" class="btn">Quero minha transformação</a>
+    </div>
+    <div class="scroll-indicator">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
     </div>
   </section>
 
