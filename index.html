@@ -462,6 +462,107 @@
       left: 0;
     }
 
+    /* PLANOS / CRÉDITOS */
+    .planos-grid {
+      display: flex;
+      gap: 25px;
+      justify-content: center;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .plano-card {
+      width: 280px;
+      background: rgba(0, 255, 179, 0.04);
+      border: 1px solid rgba(0, 255, 179, 0.3);
+      border-radius: 15px;
+      padding: 30px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .plano-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 20px rgba(0, 255, 179, 0.4);
+    }
+
+    .plano-card.destaque-plano {
+      border: 2px solid #00ffb3;
+      box-shadow: 0 0 25px rgba(0, 255, 179, 0.5);
+    }
+
+    .plano-tag {
+      position: absolute;
+      top: -14px;
+      background: #00ffb3;
+      color: #000;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .plano-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    .plano-preco {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #00ffb3;
+      margin: 10px 0 4px;
+    }
+
+    .plano-preco span {
+      font-size: 0.9rem;
+      color: #aaa;
+      font-weight: 400;
+    }
+
+    .plano-card ul {
+      list-style: none;
+      text-align: left;
+      margin: 18px 0 26px;
+      width: 100%;
+    }
+
+    .plano-card ul li {
+      font-size: 0.92rem;
+      color: #ddd;
+      padding-left: 24px;
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .plano-card ul li::before {
+      content: "✓";
+      color: #00ffb3;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
+    .plano-card .btn {
+      width: 100%;
+      text-align: center;
+    }
+
+    .planos-nota {
+      margin-top: 30px;
+      font-size: 0.85rem;
+      color: #999;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     /* FAQ */
     .faq-list {
       max-width: 700px;
@@ -683,6 +784,11 @@
       .resultado-card {
         width: 100%;
       }
+
+      .plano-card {
+        width: 100%;
+        max-width: 320px;
+      }
     }
 
     @media (max-width: 480px) {
@@ -723,37 +829,37 @@
         <li><a href="#banner">Início</a></li>
         <li><a href="#sobre">Sobre mim</a></li>
         <li><a href="#comofunciona">Como funciona</a></li>
-        <li><a href="#avaliacoes">Avaliações</a></li>
         <li><a href="#beneficios">Benefícios</a></li>
+        <li><a href="#avaliacoes">Avaliações</a></li>
+        <li><a href="#planos">Planos</a></li>
         <li><a href="#faq">Dúvidas</a></li>
         <li><a href="#contato">Contato</a></li>
-        <li><a href="#contato" class="btn nav-cta">Fale comigo</a></li>
+        <li><a href="#planos" class="btn nav-cta">Fale comigo</a></li>
       </ul>
       <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
     </nav>
   </header>
 
   <!-- BANNER -->
-  <section id="banner" class="banner">
+    <section id="banner" class="banner">
     <div class="banner-bg"></div>
     <div class="banner-content">
       <span class="banner-overline">Personal Trainer · Brasília/DF</span>
       <h1>Daniel Montandon</h1>
       <p>Transformação Física com Método, Estratégia e Acompanhamento Profissional</p>
-      <a href="#contato" class="btn">Quero minha transformação</a>
+      <a href="#planos" class="btn">Quero minha transformação</a>
     </div>
     <div class="scroll-indicator">
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
     </div>
   </section>
 
-  <section class="prova-social">
+    <section class="prova-social">
     <h2>+150 alunos transformados</h2>
     <p>Resultados comprovados com metodologia baseada em ciência e prática real de academia.</p>
   </section>
 
-  <!-- SOBRE MIM -->
-  <section id="sobre" class="sobre">
+    <section id="sobre" class="sobre">
     <h2>Sobre mim</h2>
     <div class="sobre-content">
       <div class="sobre-foto">
@@ -772,8 +878,7 @@
     </div>
   </section>
 
-  <!-- RESULTADOS ANTES/DEPOIS -->
-  <section id="resultados" class="resultados">
+    <section id="resultados" class="resultados">
     <h2>Resultados reais</h2>
     <p>Transformações de alunos acompanhados na consultoria online.</p>
     <div class="resultados-grid">
@@ -808,8 +913,7 @@
     <p class="resultados-nota">Fotos publicadas com autorização dos alunos. Resultados variam de pessoa para pessoa, de acordo com adesão ao plano, histórico individual e rotina.</p>
   </section>
 
-  <!-- COMO FUNCIONA -->
-  <section id="comofunciona" class="como-funciona">
+    <section id="comofunciona" class="como-funciona">
     <h2>Como funciona a consultoria online</h2>
     <p>Um processo simples, direto e 100% adaptado à sua rotina.</p>
     <div class="como-funciona-steps">
@@ -831,8 +935,17 @@
     </div>
   </section>
 
-  <!-- AVALIAÇÕES -->
-  <section id="avaliacoes" class="avaliacoes">
+    <section id="beneficios" class="beneficio">
+    <h2>Por que treinar com um Personal Trainer?</h2>
+    <ul>
+      <li>Treinos sob medida: nada de copiar treinos prontos, cada sessão é planejada para o seu objetivo.</li>
+      <li>Técnica e postura corretas: evite lesões e aprenda a executar os exercícios do jeito certo.</li>
+      <li>Mais motivação: acompanhamento próximo que mantém você focado e disciplinado.</li>
+      <li>Resultados reais e seguros: progresso consistente, com a confiança de estar no caminho certo.</li>
+    </ul>
+  </section>
+
+    <section id="avaliacoes" class="avaliacoes">
     <div class="container">
       <h2>Avaliações de Alunos</h2>
       <p>Confira as transformações e depoimentos de alunos que já alcançaram seus objetivos com a consultoria online.
@@ -855,7 +968,7 @@
         <div class="card">
           <p class="comentario">"Ganhei mais energia e foco com os treinos. Excelente profissional e com abordagem
             prática e motivadora."</p>
-          <div class="estrelas">★★★★★</div>    
+          <div class="estrelas">★★★★★</div>
           <p class="nome">João Ribeiro</p>
           <p class="cargo">Empresário</p>
         </div>
@@ -863,19 +976,82 @@
     </div>
   </section>
 
-  <!-- BENEFÍCIOS -->
-  <section id="beneficios" class="beneficio">
-    <h2>Por que treinar com um Personal Trainer?</h2>
-    <ul>
-      <li>Treinos sob medida: nada de copiar treinos prontos, cada sessão é planejada para o seu objetivo.</li>
-      <li>Técnica e postura corretas: evite lesões e aprenda a executar os exercícios do jeito certo.</li>
-      <li>Mais motivação: acompanhamento próximo que mantém você focado e disciplinado.</li>
-      <li>Resultados reais e seguros: progresso consistente, com a confiança de estar no caminho certo.</li>
-    </ul>
+    <section id="planos" class="planos">
+    <h2>Planos de consultoria</h2>
+    <p>Escolha o plano ideal e comece hoje mesmo. Pagamento seguro via PIX, cartão ou PicPay.</p>
+
+    <!--
+      COMO FUNCIONA A COMPRA (leia antes de publicar):
+
+      1) Cada botão "Comprar agora" abaixo leva a um LINK DE PAGAMENTO.
+         Gere esse link no painel do PicPay Empresas ou do Mercado Pago
+         (ambos têm opção de "Link de pagamento" pronta, sem precisar de API):
+
+         PicPay Empresas: https://empresas.picpay.com
+         Mercado Pago (Link de Pagamento): https://www.mercadopago.com.br/links
+
+         Depois de gerar, troque o "#" nos href="" abaixo pela URL real do link.
+
+      2) Depois que o aluno paga, ele cai automaticamente na tela de
+         confirmação do link (PicPay/Mercado Pago) e depois pode ser
+         redirecionado de volta pro WhatsApp pra enviar o comprovante
+         e já receber a anamnese/primeiro contato. Isso pode ser feito
+         configurando a "URL de redirecionamento" do link de pagamento
+         pra apontar pro link de WhatsApp abaixo.
+
+      3) Enquanto o volume for baixo, a liberação do acesso (grupo,
+         planilha de treino, etc.) pode ser manual: o Daniel confirma
+         o pagamento no painel e libera por WhatsApp. Depois, se quiser
+         automatizar, dá pra usar Zapier/Make conectado ao webhook do
+         gateway pra isso ser automático.
+    -->
+
+    <div class="planos-grid">
+      <div class="plano-card">
+        <h3>Plano Mensal</h3>
+        <div class="plano-preco">R$ 197<span>/mês</span></div>
+        <ul>
+          <li>Treino personalizado</li>
+          <li>Ajustes mensais</li>
+          <li>Suporte via WhatsApp</li>
+        </ul>
+        <!-- Substitua o href="#" pelo link de pagamento real -->
+        <a href="#" class="btn" target="_blank">Comprar agora</a>
+      </div>
+
+      <div class="plano-card destaque-plano">
+        <span class="plano-tag">Mais popular</span>
+        <h3>Plano Trimestral</h3>
+        <div class="plano-preco">R$ 497<span>/3 meses</span></div>
+        <ul>
+          <li>Treino personalizado</li>
+          <li>Ajustes quinzenais</li>
+          <li>Suporte prioritário</li>
+          <li>Avaliação de evolução</li>
+        </ul>
+        <!-- Substitua o href="#" pelo link de pagamento real -->
+        <a href="#" class="btn" target="_blank">Comprar agora</a>
+      </div>
+
+      <div class="plano-card">
+        <h3>Plano Semestral</h3>
+        <div class="plano-preco">R$ 897<span>/6 meses</span></div>
+        <ul>
+          <li>Treino personalizado</li>
+          <li>Ajustes semanais</li>
+          <li>Suporte prioritário</li>
+          <li>Avaliação de evolução</li>
+          <li>Maior economia</li>
+        </ul>
+        <!-- Substitua o href="#" pelo link de pagamento real -->
+        <a href="#" class="btn" target="_blank">Comprar agora</a>
+      </div>
+    </div>
+
+    <p class="planos-nota">Após a confirmação do pagamento, você recebe as instruções de acesso e o primeiro contato em até 24h úteis pelo WhatsApp.</p>
   </section>
 
-  <!-- FAQ -->
-  <section id="faq" class="faq">
+    <section id="faq" class="faq">
     <h2>Perguntas frequentes</h2>
     <div class="faq-list">
       <details class="faq-item">
@@ -898,12 +1074,15 @@
         <summary>Preciso ir à academia ou posso treinar em casa?</summary>
         <p>Você pode treinar onde for mais conveniente. O importante é alinharmos isso na anamnese inicial para montar o plano certo.</p>
       </details>
+      <details class="faq-item">
+        <summary>Como funciona o pagamento dos planos?</summary>
+        <p>O pagamento é feito de forma segura via link de pagamento (PIX, cartão ou PicPay). Após a confirmação, você recebe as instruções de acesso pelo WhatsApp em até 24h úteis.</p>
+      </details>
     </div>
   </section>
 
-  <!-- CTA + FORMULÁRIO DE CONTATO -->
-  <section id="contato" class="cta">
-    <h2>Pronto para começar sua transformação?</h2>
+    <section id="contato" class="cta">
+    <h2>Ainda com dúvidas sobre qual plano escolher?</h2>
     <p>Preencha o formulário abaixo e fale direto com o Daniel pelo WhatsApp.</p>
 
     <form class="contato-form" id="formContato">
